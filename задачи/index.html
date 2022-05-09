@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        
+        // Task 1
+        function deletecons(letters) {
+            let result = letters.replace(/[бвгджзйклмнпрстфхцчшщБВГДЖЗЙКЛМНПРСТФХЦЧШЩ]/g, '')
+            return result
+        }
+
+        const string = "Привет! Как дела?";
+        console.log(string);
+
+        var text = string;
+        const task1 = deletecons(text);
+        console.log(task1);
+
+
+        // Task 2
+        const workers = [
+            {name: 'John', salary: 500},
+            {name: 'Mike', salary: 1300},
+            {name: 'Linda', salary: 1500},
+            ];
+
+
+        const getWorthyWorkers = workers.filter(object => {
+            return object.salary > 1000;
+        });
+
+        console.log(getWorthyWorkers);
+
+        
+        //Task 3
+        const path = "/users/download/index.html"
+        
+        function isHtml(text) {
+            let result = text.includes("html")
+            return result
+        }
+
+        console.log(isHtml(path));
+
+        //Task 4
+        const mixedArray = [3,13,74,14,66,15,22,4];
+    
+        const isEven = mixedArray.filter(function(x) {
+            return x % 2 === 0;
+        })
+        
+        console.log(mixedArray, isEven);
+    
+    </script>
+
+</head>
+<body>
+    
+
+
+
+
+</body>
+</html>
