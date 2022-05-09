@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .wrapper {
+           width: 300px;
+            margin: 0 auto;}
+
+        .slider-container {
+            overflow: hidden;
+            position: relative;
+            margin: auto;
+        }
+
+        .slider__items {
+            display: flex;
+            background-color: rgb(244, 218, 185);
+            transition: .3s;
+        }
+
+        .slider__item {
+            min-width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            text-decoration: none;
+        }
+
+        .arrow--right {
+            right: 0;
+            position: absolute;
+            top: 50%;
+            text-decoration: none;
+        }
+    </style>
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      let i;
+      let slides = document.getElementsByClassName("slider__item");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      
+      slides[slideIndex-1].style.display = "block"; 
+    }
+    </script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="slider-container">
+            <a class="arrow" onclick="plusSlides(-1)" href="#">←</a>
+            <div class=slider__items>
+                <div class="slider__item">1</div>
+                <div class="slider__item">2</div>
+                <div class="slider__item">3</div>
+                <div class="slider__item">4</div>
+                <div class="slider__item">5</div>
+                <div class="slider__item">6</div>
+                <div class="slider__item">7</div>
+                <div class="slider__item">8</div>
+            </div>
+            <a class="arrow--right" onclick="plusSlides(1)" href="#">→</a>
+        </div>
+        
+    </div>
+</body>
+</html>
